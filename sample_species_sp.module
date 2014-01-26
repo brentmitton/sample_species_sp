@@ -1,0 +1,24 @@
+<?php
+
+function sample_species_sp_required_objects(IslandoraTuque $con){
+  $module_path = drupal_get_path('module', 'sample_species_sp');
+  $test_sp_content_model = $con->repository->constructObject('islandora:sample_species_sp');
+  $test_sp_content_model->owner = "fedoraAdmin";
+  $test_sp_content_model->label = "Test Content Model";
+  $test_sp_content_model->models = "fedora-system:ContentModel-3.0";
+
+  $datastream = $test_sp_content_model->constructDatastream('DS-COMPOSITE-MODEL', 'X');
+  $datastream->label = 'DS-COMPOSITE-MODEL';
+  $datastream->mimetype = "text/xml";
+  $datastream->setContentFromFile("$module_path/xml/species_ds_comp.xml", FALSE);
+  $test_sp_content_model->ingestDatastream($datastream);
+
+  return array(
+    'sample_species_sp'=>array(
+      "title"=>"Sample Species SP",
+      "objects"=>array(
+        $test_sp_content_model,
+      ),
+    ),
+  );
+}

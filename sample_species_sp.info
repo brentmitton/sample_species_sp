@@ -1,0 +1,6 @@
+name = "Species Solution Pack"
+description = "Test Solution Pack"
+core = 7.x
+dependencies[] = islandora
+package = Islandora
+
