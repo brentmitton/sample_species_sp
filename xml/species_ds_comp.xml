@@ -1,0 +1,15 @@
+<dsCompositeModel xmlns="info:fedora/fedora-system:def/dsCompositeModel#">
+    <!-- DUBLIN CORE DATASTREAM: Metadata about the object -->
+    <dsTypeModel ID="DC">
+        <form FORMAT_URI="http://www.openarchives.org/OAI/2.0/oai_dc/" MIME="text/xml"></form>
+    </dsTypeModel>
+    
+    <!-- EXTERNAL RELATIONS DATASTREAM: Points to related objects -->
+    <dsTypeModel ID="RELS-EXT" optional="true">
+        <form FORMAT_URI="info:fedora/fedora-system:FedoraRELSExt-1.0" MIME="application/rdf+xml"></form>
+    </dsTypeModel>
+    
+    <!-- MODS DATASTREAM IS USED FOR BIBLIOGRAPHIC INFO -->
+    <!-- OTHER DATASTREAMS ARE SORT OF MORE SELF EXPLANITORY -->
+    
+</dsCompositeModel>
